@@ -15,7 +15,7 @@ $(document).ready(function(){
 
    })
    $(document).on('click','#save',function(e){
-   
+    e.preventDefault()
     var uid=$('#userId')
     var uname=$('#name')
     var uemail=$('#email')
@@ -34,7 +34,7 @@ $(document).ready(function(){
         data: updateData,
         // dataType: "dataType",
         success: function (response) {
-            console.log('success');
+           window.location.replace('/')
         }
     });
 

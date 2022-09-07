@@ -95,7 +95,7 @@ $(document).ready(function(){
 							<td>
 							
 								<a href="#editEmployeeModal" id="editButton" class="edit" data-toggle="modal" uid=" <%= element._id %>  " uname=" <%= element.name %>  " email=" <%= element.email %>  "  address=" <%= element.address %>  " phone=" <%= element.phone %>  " >edit</a>
-								<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+								<a href="#deleteEmployeeModal" id="deleteButton" class="delete" data-toggle="modal" uid=" <%= element._id %>  " uname=" <%= element.name %>  " email=" <%= element.email %>  "  address=" <%= element.address %>  " phone=" <%= element.phone %>  "><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 							</td>
 						</tr>
 					<% }) %>

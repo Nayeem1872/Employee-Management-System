@@ -1,7 +1,6 @@
-const { default: axios } = require('axios');
 const { response } = require('express');
 var Userdb = require('../model/model');
-
+const mongoose = require('mongoose')
 
 exports.create= async (req, res)=>{
 try{
@@ -69,37 +68,26 @@ exports.findOneUser= async (req,res, next)=>{
 
 
 
-exports.update = async (req,res)=>{
+exports.uupdate = async (req,res)=>{
    
    console.log(req.body);
     try{
-        // const id= req.params.id;
-        // const updateUser= await Userdb.findOneAndUpdate({"_id":req.body.id},{
-        //     "$set":{"name":req.body.name,
-        //    "email":req.body.email,
-        //     "address":req.body.address,
-        //     "phone":req.body.phone
+        let checkedItem = req.body.id;  
+         if (!mongoose.Types.ObjectId.isValid(checkedItem)) 
+         {     checkedItem = checkedItem.replace(/\s/g, '');   }
+        const updateUser = await Userdb.findByIdAndUpdate(checkedItem, { 
+            name : req.body.name,
+            email : req.body.email,
+            address  : req.body.address,
+            phone : req.body.phone,
 
-        //     },
-          
-
-        // },
-        //   {
-        //         new:true,
-        //     },
-        // )
-        const updateUser= await Userdb.findByIdAndUpdate(req.body.id, { 
-            name:req.body.name,
-            email:req.body.email,
-            address:req.body.address,
-            phone:req.body.phone,
-
-         });
+         },
+         );
         
    
           if(updateUser){
-        //  res.redirect("/")
-        console.log('success');
+        res.redirect("/") 
+       
         }
        
 }
