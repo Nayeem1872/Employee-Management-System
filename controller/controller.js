@@ -97,20 +97,21 @@ exports.uupdate = async (req,res)=>{
    
 }
 
-exports.delete= async (req, res, next)=>{
+exports.delete= async (req, res)=>{
      try{
-        const id= req.params.id;
+        let id = req.body.id;  
+         if (!mongoose.Types.ObjectId.isValid(id)) 
+         {     id= id.replace(/\s/g, '');   }
+        // const id= req.body.id;
         const deleteUser= await Userdb.findByIdAndDelete(id)
-        res.status(200).json({
-            status: 'success',
-            data: {
-              deleteUser
+        if(deleteUser){
+            res.redirect("/") 
+           
             }
-          });
   }
      catch (err){
         console.log(err)
      }
-     next();
+     
 
 }

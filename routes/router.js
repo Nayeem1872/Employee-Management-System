@@ -22,7 +22,7 @@ route.post('/addNewEmployee',controller.create);
 route.get('/',controller.findUser);
 route.get('/api/users/:id',controller.findOneUser);
 route.post('/editEmployee',controller.uupdate);
-route.delete('/deleteEmployee',controller.delete );
+route.post('/deleteEmployee',controller.delete );
 
 
 module.exports = route;

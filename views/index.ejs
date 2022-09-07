@@ -59,7 +59,7 @@ $(document).ready(function(){
 					</div>
 					<div class="col-sm-6">
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+						<a href="#deleteEmployeeModal"  class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
 					</div>
 				</div>
 			</div>
@@ -94,8 +94,8 @@ $(document).ready(function(){
 							<td><%= element.phone %> </td>
 							<td>
 							
-								<a href="#editEmployeeModal" id="editButton" class="edit" data-toggle="modal" uid=" <%= element._id %>  " uname=" <%= element.name %>  " email=" <%= element.email %>  "  address=" <%= element.address %>  " phone=" <%= element.phone %>  " >edit</a>
-								<a href="#deleteEmployeeModal" id="deleteButton" class="delete" data-toggle="modal" uid=" <%= element._id %>  " uname=" <%= element.name %>  " email=" <%= element.email %>  "  address=" <%= element.address %>  " phone=" <%= element.phone %>  "><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+								<a href="#editEmployeeModal" id="editButton" class="edit" data-toggle="modal" uid=" <%= element._id %>  " uname=" <%= element.name %>  " email=" <%= element.email %>  "  address=" <%= element.address %>  " phone=" <%= element.phone %>  " ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+								<a href="#deleteEmployeeModal" id="deleteButton" did=" <%= element._id %>  " class="delete" data-toggle="modal"><i class="material-icons"  title="Delete">&#xE872;</i></a>
 							</td>
 						</tr>
 					<% }) %>
